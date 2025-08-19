@@ -10,27 +10,29 @@ public class Task12 {
         int maara = Integer.parseInt(scanner.nextLine());
         int kerrat = 1;
 
-        while (kerrat <= 10) {
-            int a = rand.nextInt(10);
-            int b = rand.nextInt(10);
+        String[] firstNames = {
+            "Alice", "Bob", "Charlie", "Diana", "Ethan",
+            "Fiona", "George", "Hannah", "Isaac", "Julia",
+            "Kevin", "Luna", "Michael", "Nora", "Oliver",
+            "Paula", "Quinn", "Ryan", "Sophia", "Thomas",
+            "Uma", "Victor", "Wendy", "Xavier", "Yara", "Zane"
+        };
 
-            System.out.println(a + " * " + b);
-            int perfect = a*b;
-            int answer = Integer.parseInt(scanner.nextLine());
-            System.out.println("Answer is: " + answer);
-            
-            if (answer != perfect){
-                System.out.println("Wrong answer!");
-                kerrat = 0;
-            }
-            else {
-                System.out.println("Answer is right.");
-            }
+        String[] lastNames = {
+            "Smith", "Johnson", "Brown", "Taylor", "Anderson",
+            "Thomas", "Jackson", "White", "Harris", "Martin",
+            "Thompson", "Garcia", "Martinez", "Robinson", "Clark",
+            "Rodriguez", "Lewis", "Lee", "Walker", "Hall",
+            "Allen", "Young", "King", "Wright", "Scott", "Green"
+        };
 
-            System.out.println("Points: " + kerrat);
+        while (kerrat <= maara) {
+            int index1 = rand.nextInt(25);
+            int index2 = rand.nextInt(25);
+
+            System.out.println(firstNames[index1] + " " + lastNames[index2]);
             kerrat++;
         }
-        System.out.println("Congratulations for mastering the multiplication tables and terminates!");
         scanner.close();
     }
 }
