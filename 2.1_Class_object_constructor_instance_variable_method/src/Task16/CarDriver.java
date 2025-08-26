@@ -1,7 +1,5 @@
 package Task16;
 
-import Task30.Car;
-
 public class CarDriver {
     public static void main(String[] args) {
         Car myCar;

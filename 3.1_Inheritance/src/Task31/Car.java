@@ -1,4 +1,4 @@
-package Task30;
+package Task31;
 // Pitääkö gasolineLevelille asentaa omat arvot jotka muuttuvat
 
 
@@ -101,5 +101,32 @@ class SportsCar extends Car {
         } else {
             setSpeed(0);
         }
+    }
+}
+
+class Bus extends Car {
+
+    private int passengers;
+
+    public Bus(String typeName, int passangers) {
+        super(typeName);
+        this.passengers = passengers;
+    }
+
+    public int passengerEnter() {
+        passengers += 1;  // or ++passengers
+        return passengers;
+    }
+
+    public int passengerExit() {
+        if (passengers > 0) {
+            passengers -= 1;  // or --passengers
+            return passengers;
+        }
+        return passengers;  // Added missing return for else case
+    }
+
+    public int getPassengerCount(){
+        return passengers;
     }
 }
