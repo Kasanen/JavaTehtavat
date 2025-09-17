@@ -34,9 +34,9 @@ public class DictionaryView extends Application {
         pane.setHgap(10);
         pane.setAlignment(Pos.CENTER);
 
-        VBox resultBox = new VBox(10, result); // Separate box for result
+        VBox resultBox = new VBox(10, result);
         resultBox.setPadding(new Insets(10));
-        resultBox.setStyle("-fx-border-color: gray; -fx-background-color: #f9f9f9;"); // Optional styling
+        resultBox.setStyle("-fx-border-color: gray; -fx-background-color: #f9f9f9;");
 
         pane.getChildren().addAll(wordField, searchButton, resultBox);
 
