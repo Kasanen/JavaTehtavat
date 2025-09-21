@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="controller.BMIController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <Label text="My BMI app" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+    </top>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-padding: 20;">
+                    <children>
+                        <Label style="-fx-padding: 10;" text="Length (cm):" />
+                        <Slider fx:id="heightSlider" onDragDetected="#updateBMI" onMouseDragged="#updateBMI" onMouseReleased="#updateBMI" max="250.0" min="100.0" prefHeight="37.0" prefWidth="212.0" showTickLabels="true" showTickMarks="true" />
+                    </children>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="421.0" style="-fx-padding: 20;">
+                    <children>
+                        <Label style="-fx-padding: 10;" text="Weight (kg):" />
+                        <Slider fx:id="weightSlider" onDragDetected="#updateBMI" onMouseDragged="#updateBMI" onMouseReleased="#updateBMI" blockIncrement="25.0" max="200.0" min="25.0" prefHeight="37.0" prefWidth="211.0" showTickLabels="true" showTickMarks="true" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="BMI: ">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+                <Label fx:id="bmiLabel" text="0">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>
