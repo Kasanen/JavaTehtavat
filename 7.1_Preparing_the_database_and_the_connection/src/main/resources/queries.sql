@@ -5,7 +5,8 @@ SELECT * FROM CURRENCY;
 
 -- 2.
 SELECT 2;
-SELECT * FROM CURRENCY WHERE abbreviation = 'EUR';
+SELECT * FROM CURRENCY 
+WHERE abbreviation = 'EUR';
 
 -- 3.
 SELECT 3;
@@ -14,4 +15,5 @@ FROM CURRENCY;
 
 -- 4.
 SELECT 4;
-SELECT name, conversion_rate FROM CURRENCY ORDER BY conversion_rate DESC LIMIT 1;
+SELECT name, conversion_rate FROM CURRENCY 
+ORDER BY conversion_rate DESC LIMIT 1;
