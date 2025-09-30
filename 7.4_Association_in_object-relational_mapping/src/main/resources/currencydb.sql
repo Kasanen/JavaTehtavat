@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS currencies;
-CREATE DATABASE currencies;
-USE currencies;
+DROP DATABASE IF EXISTS currenciesV2;
+CREATE DATABASE currenciesV2;
+USE currenciesV2;
 
 CREATE TABLE CURRENCY (
     id INT NOT NULL AUTO_INCREMENT,
@@ -20,5 +20,7 @@ INSERT INTO CURRENCY (abbreviation, name, conversion_rate) VALUES
 ('CHF', 'Swiss Franc', 0.890000),
 ('CNY', 'Chinese Yuan', 7.300000);
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON currencies.* TO 'appuser'@'localhost';
+DROP USER IF EXISTS 'appuser'@'localhost';
+CREATE USER 'appuser'@'localhost' IDENTIFIED BY '123';
+GRANT SELECT, INSERT, UPDATE, DELETE ON currenciesV2.* TO 'appuser'@'localhost';
 FLUSH PRIVILEGES;
