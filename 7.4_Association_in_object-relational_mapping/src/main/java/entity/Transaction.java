@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Transaction {
@@ -11,8 +12,15 @@ public class Transaction {
     private int id;
     private double amount;
 
-    public Transaction(double amount) {
+    @ManyToOne
+    private CurrencyEntity currency1;
+    @ManyToOne
+    private CurrencyEntity currency2;
+
+    public Transaction(double amount, CurrencyEntity cur1, CurrencyEntity cur2) {
         this.amount = amount;
+        this.currency1 = cur1;
+        this.currency2 = cur2;
     }
 
     public Transaction(){

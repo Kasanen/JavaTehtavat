@@ -1,6 +1,4 @@
-package Main;
-
-public class Main {
+public class Pen {
     public static boolean isEven(int number) {
         return ((number % 2) == 0);
     }

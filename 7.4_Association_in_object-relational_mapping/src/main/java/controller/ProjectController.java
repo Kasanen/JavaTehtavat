@@ -22,8 +22,11 @@ public class ProjectController {
         Double result = currency.convert(amount, cur1, cur2);
         Double roundedResult = Math.round(result * 100.0) / 100.0;
 
-        Transaction newTransaction = new Transaction();
-        newTransaction.setAmount(amount);
+        System.out.println(cur1);
+        CurrencyEntity currency1 = currencyDao.find(cur1);
+        CurrencyEntity currency2 = currencyDao.find(cur2);
+
+        Transaction newTransaction = new Transaction(amount, currency1, currency2);
         transactionDao.persist(newTransaction);
 
         view.setResult(roundedResult);

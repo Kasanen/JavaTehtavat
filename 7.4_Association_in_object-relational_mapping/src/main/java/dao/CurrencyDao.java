@@ -1,9 +1,9 @@
 package dao;
 
+import java.util.List;
+
 import entity.CurrencyEntity;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import java.util.List;
 
 public class CurrencyDao {
 
@@ -14,10 +14,15 @@ public class CurrencyDao {
         em.getTransaction().commit();
     }
 
-    public CurrencyEntity find(int id) {
+    public CurrencyEntity find(String abbreviation) {
         EntityManager em = datasource.MariaDbJpaConnection.getInstance();
-        CurrencyEntity emp = em.find(CurrencyEntity.class, id);
-        return emp;
+        List<CurrencyEntity> emp = em.createQuery("select e from CurrencyEntity e").getResultList();
+        for(CurrencyEntity e : emp){
+            if (e.getAbbreviation().equals(abbreviation)){
+                return e;
+            }
+        }
+        return null;
     }
 
     public List<CurrencyEntity> findAll() {
